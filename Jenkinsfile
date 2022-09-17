@@ -20,11 +20,11 @@ checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRe
       }
     }
     stage('unittest'){
-      steps{
+       steps{
         sh 'mvn test'
-        }
+      }
     }
-    stage('code coverage sona'){
+    stage('code coverage'){
       steps{
         sh 'mvn clean verify sonar:sonar \
   -Dsonar.projectKey=maven-jenkins-pipeline \
